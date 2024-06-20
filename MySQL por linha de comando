@@ -1,0 +1,135 @@
+Acessando o MySQL por Linha de Comando
+Vamos acessar o campo "Pesquisar" da barra de tarefas do computador e clicar em "Prompt de Comando" para acessá-lo. Isso exibirá uma janela totalmente preta, na qual vamos digitar os atalhos para chegar até o local da máquina em que o MySQL está.
+
+Primeiro, vamos digitar cd\ e pressionar "Enter".
+
+cd\
+COPIAR CÓDIGO
+Em seguida, digitaremos cd "Program Files" e pressionaremos "Enter".
+
+cd "Program Files"
+COPIAR CÓDIGO
+Depois, vamos digitar cd MySQL e pressionar "Enter".
+
+cd MySQL
+COPIAR CÓDIGO
+Sempre que digitamos um texto e pressionamos "Enter", o sistema copia esse texto e exibe um símbolo de maior, indicando que acessou aquele local e podemos prosseguir. Abaixo, temos caminho atual no prompt:
+
+C:\Program Files\MySQL>
+
+Vamos digitar cd e a versão do MySQL que temos instalada, a 8.0, que é a mais atual no momento.
+
+Sempre colocaremos o nome do que estamos buscando ou acessando entre aspas. Portanto, digitaremos "MySQL Server 8.0".
+
+cd "MySQL Server 8.0"
+COPIAR CÓDIGO
+Depois de pressionar "Enter", teremos acessado o servidor do MySQL.
+
+C:\Program Files\MySQL\MySQL Server 8.0>
+
+Vamos digitar cd bin e pressionar "Enter".
+
+cd bin
+COPIAR CÓDIGO
+Em seguida, vamos digitar o diretório do executável do MySQL. É como se estivéssemos abrindo aquela pasta de instalação com várias partes do MySQL e vários arquivos. Vamos acessar o arquivo do executável da ferramenta, mas tudo por linha de comando.
+
+Vamos digitar dir mysql.exe, onde dir significa diretório, e pressionar "Enter".
+
+dir mysql.exe
+COPIAR CÓDIGO
+Com isso, estamos no executável do MySQL.
+
+Em seguida, vamos digitar dados de pessoa usuária e a senha. Mas também precisamos indicar a máquina que está acessando, ou seja, o * host*.
+
+Para entender esse processo, vamos abrir novamente a interface do MySQL Workbench. Na parte superior esquerda, há um ícone de uma casa. Clicando nele, voltamos para a tela de boas-vindas do MySQL que acessamos quando conhecemos a interface.
+
+Na parte inferior esquerda dessa tela, temos a instância local, que é a instância sendo executada, na qual a pessoa usuária foi criada para usar o MySQL.
+
+Nela, temos o nome da nossa máquina, que é "localhost:3306" e o nome de pessoa usuária, que é "root". Já a senha é aquela que criamos quando instalamos o MySQL e que usamos para entrar na interface.
+
+Local instance MySQL80
+
+root
+
+localhost:3306
+
+Vamos digitar esses dados no prompt de comando. Após acessar o bin, vamos digitar mysql -h, onde -h define que adicionaremos o host em seguida, que é localhost. Depois, vamos digitar -u, para verificar a parte da pessoa usuária, que é root, a pessoa usuária padrão que colocamos.
+
+Por fim, vamos digitar -p para adicionar a senha, mas não a adicionaremos diretamente. Vamos executar com "Enter" somente o comando com a pessoa usuária, o host e o -p para indicar que vamos adicionar a senha.
+
+-mysql -h localhost -u root -p
+COPIAR CÓDIGO
+Após pressionar "Enter", ele fornecerá a permissão para acrescentarmos a senha.
+
+Enter password:
+
+Nesse momento, vamos digitar a nossa senha cadastrada na nossa pessoa usuária, e pressionar "Enter".
+
+Com isso, teremos feito o login no MySQL. Ele exibe mysql no local, ou seja, fornece espaço para criarmos nossos códigos e inserir scripts SQL.
+
+mysql>
+
+Criando um Banco de Dados de Teste
+Vamos fazer um teste e criar um banco de dados, só para entender. Vamos digitar o comando CREATE DATABASE Teste; e pressionar "Enter".
+
+CREATE DATABASE Teste;
+COPIAR CÓDIGO
+Ele exibe como retorno a mensagem "Query OK", ou seja, consulta OK, e "1 row affected", ou seja, uma linha afetada.
+
+Query OK, 1 row affected (0.01 sec)
+
+Vamos ao Workbench para verificar se esse script realmente rodou. Se abrirmos o Workbench e olharmos a aba lateral esquerda, conseguiremos visualizar e acessar o banco que acabamos de criar, de nome teste.
+
+sakila
+sys
+teste
+world
+Consultando uma Tabela
+Vamos fazer outra consulta? Vamos acessar o banco Sakila, que vem instalado como exemplo do Workbench. Clicando na seta à esquerda do nome "sakila", vamos expandir sua árvore de conteúdo.
+
+sakila
+Tables
+Views
+Stored Procedures
+Functions
+Vamos clicar na seta à esquerda do nome "Tables" (tabela) para ver as tabelas desse banco de dados e fazer uma consulta.
+
+sakila
+Tables
+actor
+address
+category
+city
+country
+customer
+film
+film_actor
+film_category
+film_text
+inventory
+language
+payment
+…
+Views
+Stored Procedures
+Functions
+Vamos fazer um SELECT na tabela "actor" pela linha de comando, para entender como podemos fazer esses outros comandos.
+
+Vamos voltar à janela do prompt de comando, na qual vamos executar o comando USE Sakhila, com o banco que vamos trabalhar.
+
+Não podemos esquecer do ponto e vírgula no final de cada comando SQL.
+
+USE sakila;
+COPIAR CÓDIGO
+Em seguida, vamos executar um SELECT * FROM actor para trazer essa tabela de atores.
+
+SELECT * FROM actor;
+COPIAR CÓDIGO
+Após apertar o "Enter", veremos a tabela. Se a analisarmos, todos os dados da tabela aparecem aqui no prompt de comando.
+
+
+Portanto, é possível fazer todas as consultas pelo prompt de comando, mas podemos ver que não é tão prático fazer a análise de uma tabela muito longa por ele.
+
+A partir de agora, temos a liberdade para manipular o MySQL de duas formas diferentes: utilizando a interface do Workbench ou utilizando a linha de comando da nossa própria máquina. Com isso, podemos trabalhar com aquele que nos faz sentir melhor.
+
+Durante o curso, vamos usar o MySQL Workbench, a interface do SGBD, porque ela é mais intuitiva e visual, possibilitando trabalhar bem e que todas as pessoas consigam acompanhar, tendo ou não facilidade com a linguagem SQL.
