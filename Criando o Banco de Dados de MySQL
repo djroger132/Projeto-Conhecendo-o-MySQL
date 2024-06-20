@@ -1,0 +1,44 @@
+Estruturar o banco de dados
+A primeira coisa que vamos fazer agora é começar a estruturar o banco de dados da nossa empresa.
+
+Antes de trazermos as tabelas, essas tabelas precisam estar contidas em algum lugar, que é o banco de dados. Então, o nosso primeiro passo é, realmente, criar o banco de dados da Insight Places.
+
+Como podemos fazer isso? Vamos entender aqui. Se olharmos na nossa interface, no MySQL Workbench, temos o banco de dados teste que tínhamos criado por linha de comando, que está na lateral esquerda.
+
+Se eu for em cima do nome dele e clicar com o botão direito, tenho a opção de apagar esse banco de dados: Drop Schema. Vamos deletá-lo, porque foi só um teste mesmo. Vamos clicar em "Drop Schema > Drop Now" e finalizamos essa parte.
+
+Agora vamos criar o banco de dados da Insight Places. Temos algumas formas de fazer isso.
+
+Podemos fazer através do comando SQL mesmo. Então, podemos colocar o comando na parte central da nossa interface. Vou colocar só um TESTE1 aqui para vermos o comando funcionando:
+
+CREATE DATABASE TESTE1
+COPIAR CÓDIGO
+Podemos clicar no botão com ícone de raio para executar o comando. E agora o nosso banco foi criado. Se formos aqui na lateral esquerda, ao lado de Schemas, e apertar nas duas setinhas para atualizar, já tem ali o banco de dados de nome "TESTE1".
+
+Da mesma forma, eu poderia trocar a palavra database por "schema", no MySQL essas duas palavras são sinônimos, então, podemos usar os dois termos quando quisermos fazer os comandos ou se referir ao banco de dados.
+
+Mas tem uma outra forma de criarmos o nosso banco de dados.
+
+Se formos na parte superior esquerda, tem algumas opções que já até conhecemos quando falamos um pouco da interface. Tem ali o ícone de uma figura que é conhecida como a figura para representar o banco de dados. Ao colocar o mouse sobre ela veremos a frase "Create a new schema in the connected server". Então, vamos clicar nessa opção para criar ali um novo banco de dados.
+
+Clicando nessa opção, ela abre uma nova janela na parte de consultas, com algumas informações para preenchermos.
+
+Então, a primeira informação é a de name, que é o nome do nosso banco de dados. E aí, vou colocar um nome que tenha a ver com a empresa, no caso, o nome da empresa mesmo. Então, o nome será insight_places.
+
+Abaixo do lugar onde colocamos o nome, temos dois campos para serem preenchidos, que têm como nome Charset/Collation. Esses campos determinam a codificação de caracteres do nosso banco de dados.
+
+Esse é um assunto que não vou me aprofundar aqui em vídeo, mas vou deixar uma atividade explicando melhor do que se trata.
+
+Temos um padrão que utilizamos normalmente. Então, vou colocar esse padrão aqui. Então, na parte do Charset, vamos colocar UTF8. E na parte do Collation UTF8 Unicode. E, assim, já determinamos como vai ser o nosso banco de dados.
+
+Name: Insight_Places
+
+Charset/Collation: utf8 / utf8_unicode_ci
+
+Em seguida, clicamos no botão "Aplicar > OK". E aí, ele vai mostrar como se fosse a linha de comando que teríamos feito para criar esse banco de dados se tivéssemos escrito em script SQL.
+
+CREATE SCHEMA insight_places' DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci
+COPIAR CÓDIGO
+E aí, clicamos novamente em "Aplicar". E ele vai falar que está executando o script SQL com sucesso. Podemos clicar em "Finish". E foi aplicado corretamente.
+
+Então, agora, vamos vir aqui na parte esquerda, ao lado de Schemas, nas duas setinhas para atualizar. E aí, atualizando, já temos aqui o nosso banco de dados da Insight Places.
