@@ -1,0 +1,67 @@
+Conhecendo o MySQL Workbench
+Para acessar o MySQL Workbench, vamos ao campo "Pesquisar" na barra de tarefas da parte inferior do nosso computador. Se você ainda não o utilizou, ele não estará na aba "Recentes" e você precisará localizar o caminho onde salvou o MySQL Workbench durante a instalação.
+
+Ao abrir o MySQL Workbench, uma tela de boas-vindas é exibida. Na parte inferior esquerda, temos a seção "MySQL Connections" na qual estão as conexões MySQL, ou seja, as pessoas usuárias criadas.
+
+Veremos somente uma por enquanto.
+
+Local instance MySQL80
+
+root
+
+localhost:3306
+
+Quando instalamos o MySQL, ele pede para criarmos a primeira pessoa usuária local, que é o root, e sua senha. Essa pessoa usuária será a principal da máquina.
+
+Vamos clicar nela para nos redirecionar à interface principal do MySQL Workbench.
+
+Ao clicar nessa pessoa usuária pela primeira vez, será solicitada a senha cadastrada durante a instalação. No caso do vídeo, como já estávamos utilizando esse login, a senha já estava logada.
+
+Vamos entender um pouco sobre a interface do MySQL Workbench. Na parte central, temos uma área para queries (consultas), com uma guia denominada "Query 1". Nela, vamos escrever os códigos SQL.
+
+Entre a área de queries e o nome da guia, temos uma barra de ícones com algumas funções. A função que tem o desenho de um raio é onde executamos códigos SQL. Seu nome é "Execute the selected portion of the script or everything, if there is no selection" (executar a porção de script selecionada ou tudo, se não houver seleção).
+
+Abaixo da área de queries, temos uma aba denominada "Output", que exibe o histórico das ações executadas no banco de dados. Nela, temos um espaço onde veremos o histórico de ações.
+
+Acima da área de visualização do histórico, temos um botão de lista suspensa com algumas opções, entre as quais quais podemos selecionar:
+
+"Action Output" (saídas de ação) para ver as últimas ações — ou seja, podemos ver cada código executado e verificar se ele rodou ou não;
+"History Output" (histórico de saídas), que mostrará tudo que fizemos, incluindo a data e o código SQL que inserimos;
+"Text Output" (saída de texto).
+Na parte superior lateral esquerda, temos uma aba chamada "Navigator" (navegador), com a seção "SCHEMAS" que exibe todos os esquemas, ou seja, os bancos de dados.
+
+Importante: No MySQL, esquema e banco de dados (databases) são sinônimos e representam a mesma coisa. Isso não é sempre assim — em alguns conteúdos, esquema é um conjunto de tabelas ou de dados, mas não um banco de dados completo.
+
+Nessa aba, já temos três esquemas, que são exemplos do programa para fazermos testes e exemplos de consulta.
+
+sakila
+sys
+world
+Ao clicar no nome de um esquema ou banco de dados — por exemplo, o "sakila" — e acessar a aba da parte inferior esquerda, denominada "Information", veremos o nome do esquema.
+
+Schema: sakila
+
+Isso significa que esse esquema será usado agora. Se escrevermos alguma consulta ou executarmos algum código, ele será inserido nesse banco de dados.
+
+Caso não selecionemos nenhum esquema, essa aba exibirá a mensagem "No object selected" (nenhum objeto selecionado). Nesse caso, não conseguimos realizar nenhum comando, pois não há nenhum banco de dado em uso.
+
+Na parte superior esquerda, temos uma barra de ícones. O primeiro ícone a partir da esquerda, que é uma folha de papel escrito SQL com o símbolo de mais na parte inferior, se chama "Create a new SQL tab for executing queries" (criar nova aba SQL para executar consultas). Ele serve para abrir uma nova aba de query ou consulta. Isso ajuda a organizar nossos códigos por tema ou mesmo por banco.
+
+No segundo ícone, chamado "Open a SQL script file in a new query tab", temos a opção de abrir um arquivo de script SQL em uma nova aba de consulta. Podemos clicar nessa opção quando já temos um script ou comando SQL salvo em nossa máquina e queremos copiá-lo diretamente para a interface para executá-lo prontamente.
+
+No terceiro ícone, chamado "Open inspector for the selected object", podemos abrir a inspeção de um objeto selecionado. Quando clicamos em um banco de dados e depois nessa opção, vemos uma aba na área de consulta, na qual aparecem guias com todos os detalhes desse banco de dados, como suas informações, tabelas, colunas e chaves.
+
+Isso auxilia a entender detalhadamente cada banco, sem precisar realizar muitas consultas.
+
+No quarto, quinto, sexto, sétimo e oitavo ícones, temos opções de criação dos seguintes elementos no servidor conectado:
+
+Em "Create a new schema in the connected server", criamos um novo esquema (ou seja, um banco de dados do zero);
+Em "Create a new table in the active schema, in the connected server", criamos uma nova tabela no esquema ativo;
+Em "Create a new view in the active schema, in the connected server", criamos uma nova view;
+Em "Create a new stored procedure in the active schema, in the connected server", criamos uma nova procedure e
+Em "Create a new function in the active schema, in the connected server", criamos uma nova função.
+No oitavo ícone, "Search table data for text in objects selected in the sidebar schema tree", podemos procurar um dado de uma tabela a partir de parte de um texto contido nele. Na aba dessa opção, basta selecionar a tabela e escrever o texto.
+
+Todas essas funções que podemos criar utilizando códigos SQL são exibidas em forma de ícones na interface, criando atalhos para executá-las de forma intuitiva. Com isso, uma pessoa que não domina a linguagem SQL consegue fazer várias funções através desses atalhos da parte superior esquerda em vez de escrevê-los do zero.
+
+Logo acima desses atalhos, temos uma barra de menus com outras funções, como "File" (Arquivo). Cada menu possui uma lista suspensa com várias opções, entre as quais as opções dos ícones que exploramos. Durante o curso, vamos explorar várias dessas opções.
