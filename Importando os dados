@@ -1,0 +1,40 @@
+Inserir dados nas tabelas
+Vamos começar a inserir os dados nessas tabelas. No menu superior, vamos clicar em "File > Open SQL Script".
+
+Como mencionado anteriormente, a empresa já tinha uma base de dados estruturada em SQL, mas ela queria migrar todos esses dados para o MySQL Workbench, para esse SGBD específico.
+
+Então, ela já disponibilizou para nós todos os dados dessas tabelas em script SQL, e vamos disponibilizar esses arquivos em uma atividade depois desse vídeo, para você também fazer o download e inserir.
+
+Você pode salvar scripts SQL de vários tipos diferentes na sua máquina e abrir no MySQL para rodar já salvo.
+
+Às vezes, você faz um código em outro SGBD, em outra plataforma, online até, e você pode salvar. Depois, pode vir aqui no nosso MySQL Workbench, abrir esse código que você já criou e rodar ele sem ter que construir do zero novamente. É uma opção muito útil!
+
+Já deixamos uma pasta com os scripts de inserção dos dados das seis tabelas, exatamente dessa forma que vamos deixar para vocês também. Vamos clicar na primeira tabela de endereços e no botão "Abrir".
+
+Vai abrir uma janela informando que o tipo de codificação dessa tabela está em "latin1", mas pode manter assim, não precisa mexer na configuração da tabela. Podemos clicar em "OK".
+
+Em seguida, vemos que na parte central abriu um código de inserção com milhares de registros. Todas as linhas começando com o termo INSERT INTO, vem o nome da tabela que é enderecos, depois vem VALUES, que entre parênteses, vêm os valores que vão estar contidos naquele registro, naquela linha. Tem várias linhas de informação que devemos inserir. Veja como está o padrão dessas linhas:
+
+INSERT INTO enderecos VALUES ('22', 'Trecho de Moraes', '5', 'Baleia', 'Teixeira', 'RR', '62030-547');
+COPIAR CÓDIGO
+Vamos clicar no "Run" para executar o código. Se olharmos aqui no histórico, vemos quantas linhas estão sendo rodadas ao mesmo tempo. São várias. Isso pode exigir um pouco do programa e da sua máquina. Tenha paciência e espere alguns segundos para deixar todas as consultas acontecerem e darem certo.
+
+Assim que acabar, vamos verificar se não teve nenhum erro.
+
+Deu tudo certo, todas as linhas ficaram verdes. Agora, vamos abrir uma nova aba de comando para fazermos um SELECT na tabela de endereços, para ver se conseguimos acessar algum desses registros que foram inseridos.
+
+Vamos fazer o nosso SELECT * FROM endereços; e rodar.
+
+SELECT * FROM endereços;
+COPIAR CÓDIGO
+Logo abaixo, podemos notar que apareceu uma tabela com os dados. Tem colunas para ID, a rua, o número, o bairro, cidade, estado e o CEP. Se formos descendo com o mouse, podemos visualizar todas as linhas que acabamos de inserir.
+
+endereco_id	rua	numero	bairro	cidade	estado	cep
+1	Lagoa de Teixeira	72	Tirol	Moraes	SP	87362-365
+..	..	..	..	..	..	...
+Viu como com essa função do script SQL é simples de inserir?
+
+Claro, você poderia fazer manualmente a inserção dos dados, mas quando são muitas linhas, demora um tempo para inserir todos os dados. E já que ela já tinha esse banco de dados estruturado em uma outra plataforma, nós só migramos em código SQL para o MySQL Workbench.
+
+Desafio
+Agora, assim como a criação das tabelas, vamos deixar para você a função de inserir os dados nas outras cinco tabelas. Vamos deixar os arquivos disponibilizados para você rodar esses códigos de inserção, esses scripts no seu MySQL Workbench e popular todas essas tabelas.
